@@ -1,0 +1,430 @@
+/* ============================================
+   NORA RODRIGUEZ | MARKETING PORTFOLIO
+   Style sheet – simple class names, no W3 prefix
+   ============================================ */
+
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif;
+    color: #2b2b2b;               /* dark grey */
+    background: #ffffff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #80121c;               /* burgundy */
+    font-weight: 600;
+  }
+  
+  /* ---------- TOP BAR & NAVIGATION ---------- */
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #80121c;   /* burgundy */
+    height: 25px;
+    padding: 0 30%;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: #f4979f;   /* pastel-burgundy */
+    color: #80121c;
+  }
+  
+  .nav-link.active {
+    background-color: #ffffff;
+    color: #80121c;
+  }
+  
+  /* Hamburger – hidden on desktop */
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 8px 16px;
+    line-height: 1;
+  }
+  
+  /* Mobile dropdown menu */
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+  }
+  
+  .mobile-menu.open {
+    display: block;
+  }
+  
+  .mobile-menu a {
+    display: block;
+    padding: 16px 20px;
+    color: #80121c;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+  }
+  
+  .mobile-menu a:hover {
+    background-color: #faeed5;   /* pastel-yellow */
+  }
+  
+  /* ---------- HERO ---------- */
+  .hero {
+    background-color: #80121c;
+    color: #ffffff;
+    text-align: center;
+    padding: 160px 100px 128px 100px;   /* top padding clears fixed navbar */
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+
+/* ---------- TWO-COLUMN QUOTE WIDGET ---------- */
+.quote-widget {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* two equal columns */
+    gap: 2rem 3rem;
+    max-width: auto;
+    margin: 6rem auto auto auto;
+    background: transparent;          /* inherits section background */
+  }
+  
+  .quote-item {
+    margin: 0;                        /* reset default blockquote margin */
+    padding: 0 1.5rem 0 1.5rem;
+    border-left: 3px solid #ffffff;   /*  pale burgundy accent */
+  }
+  
+  .quote-text {
+    font-size: 1rem;                  /* same as normal body text */
+    line-height: 1.7;
+    color: #ffffff;                  
+    font-style: italic;
+    margin: 0 0 1rem 0;
+  }
+  
+  .quote-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #faeed5;
+  }
+  
+  .quote-author {
+    font-weight: 600;
+  }
+  
+  .quote-company {
+    color: #faeed5;                   /* slightly muted */
+  }
+  
+
+  
+  /* ---------- BUTTONS ---------- */
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  
+  .btn-dark {
+    background-color: #2b2b2b;   /* dark grey */
+    color: #ffffff;
+  }
+  
+  .btn-dark:hover {
+    background-color: #000000;
+  }
+  
+  
+  
+  /* ---------- CONTENT SECTIONS ---------- */
+
+  .section {
+    padding: 64px 10em;
+  }
+  
+  .section-alt {
+    background-color: #faeed5;   /* pastel-yellow */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .col-main {
+    flex: 2;
+    min-width: 300px;
+  }
+  
+  .col-side {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding-right: 4rem;
+  }
+  
+  /* Large Font Awesome icons */
+  .icon {
+    font-size: 200px;
+    color: #80121c;
+    line-height: 1;
+    display: inline-block;
+  }
+  
+  /* Typography inside sections */
+  .section h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .lead {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #2b2b2b;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .body-text {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .link-text {
+    color: #858585;
+  }
+  .link-text:hover {
+    color: #555555;
+  }
+  
+  /* ---------- QUOTE BAND ---------- */
+  .quote-band {
+    background-color: #80121c;
+    color: #ffffff;
+    text-align: center;
+    padding: 64px 16px;
+  }
+  
+  .quote-band h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+ /* ---------- IMAGES ---------- */
+ .profile-image {
+    max-width: 100%;
+    border-radius: 1.5rem;
+ }
+ .profile-image:hover {
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 16px 0 #727272;
+ }
+
+
+  /* ---------- FOOTER ---------- */
+  .site-footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 64px 16px;
+    color: #777777;
+    border-top: 1px solid #eeeeee;
+  }
+  
+  .social-icons {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-icons i {
+    margin: 0 8px;
+    color: #80121c;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+  
+  .social-icons i:hover {
+    opacity: 0.6;
+  }
+  
+  .site-footer a {
+    color: #80121c;
+    text-decoration: none;
+  }
+  
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ---------- RESPONSIVE (MOBILE) ---------- */
+  @media (max-width: 768px) {
+    /* Hide desktop nav links, show hamburger */
+    .nav-link {
+      display: none;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  
+    .navbar {
+      justify-content: flex-end;  /* hamburger on the right */
+    }
+  
+    /* Adjust hero size */
+    .hero {
+        padding: 6rem 2rem 2rem 2rem;   /* top padding clears fixed navbar */
+      }
+
+    /* Adjust hero text size */
+    .hero-title {
+      font-size: 2.8rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    /* Adjust Quote */
+
+    .quote-widget {
+        grid-template-columns: 1fr;     /* one column on mobile */
+        gap: 2rem;
+        margin: 3rem auto 3rem auto;
+      }
+
+    /* Adjust section */
+    .section {
+        padding: 64px 16px;
+      }
+      
+      .container {
+        max-width: 90%;
+        margin: 0 auto;
+      }
+      
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+      }
+      
+      .col-main {
+        flex: 2;
+        min-width: 300px;
+      }
+      
+      .col-side {
+        flex: 1;
+        min-width: 200px;
+        text-align: center;
+      }
+      
+      /* Large Font Awesome icons */
+      .icon {
+        font-size: 200px;
+        color: #80121c;
+        line-height: 1;
+        display: inline-block;
+      }
+      
+      /* Typography inside sections */
+      .section h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .lead {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #2b2b2b;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+      }
+      
+      .body-text {
+        color: #555555;
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+    }
+
+
+    
+  
+    /* Stack columns naturally (already wraps, but reduce gaps) */
+    .row {
+      gap: 1.5rem;
+    }
+  
+    .icon {
+      font-size: 140px;
+    }
